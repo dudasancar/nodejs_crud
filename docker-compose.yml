@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  crud:
+    image: postgres
+    container_name: database_crud
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=teste
+      - POSTGRES_DB=crud
+    volumes: 
+      - pgdata:/data/postgres
+
+
+volumes:
+  pgdata: 
+    driver: local
